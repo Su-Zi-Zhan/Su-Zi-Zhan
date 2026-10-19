@@ -1,0 +1,383 @@
+/*******************************************************************************
+ * _custom.scss — site-local style overrides
+ *
+ * Loaded last from assets/css/main.scss, on top of the al_folio_core partials.
+ * Serif body (Spectral), quiet sans chrome (Inter), flat surfaces, no glow.
+ ******************************************************************************/
+
+// ---------------------------------------------------------------------------
+// Tokens
+// ---------------------------------------------------------------------------
+
+:root {
+  --font-serif: "Spectral", Georgia, "Times New Roman", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --site-ink: #17160f;
+  --site-muted: #6f6c61;
+  --site-hairline: rgba(23, 22, 15, 0.14);
+  --site-code-bg: rgba(23, 22, 15, 0.055);
+  --site-selection: #c6cbe6;
+}
+
+html[data-theme="dark"] {
+  --site-ink: #f0ede4;
+  --site-muted: #9c9788;
+  --site-hairline: rgba(240, 237, 229, 0.16);
+  --site-code-bg: rgba(240, 237, 229, 0.08);
+  --site-selection: #3d4470;
+}
+
+// ---------------------------------------------------------------------------
+// Base typography
+// ---------------------------------------------------------------------------
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--site-ink);
+  letter-spacing: -0.005em;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.55rem;
+  margin-top: 2.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+strong,
+b {
+  font-weight: 600;
+  color: var(--site-ink);
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+// Selected-text highlight (reference palette)
+::selection {
+  background-color: var(--site-selection);
+  color: inherit;
+}
+
+blockquote {
+  background: transparent;
+  border-left: 2px solid var(--site-hairline);
+  padding: 0 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+code {
+  color: var(--site-ink);
+}
+
+:not(pre) > code {
+  background-color: var(--site-code-bg);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+pre {
+  border-radius: 4px;
+}
+
+// ---------------------------------------------------------------------------
+// Navbar
+// ---------------------------------------------------------------------------
+
+.navbar {
+  opacity: 1;
+  background-color: var(--global-bg-color);
+  border-bottom: 1px solid var(--site-hairline);
+}
+
+.navbar .navbar-brand {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--site-ink);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  color: var(--site-muted);
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: var(--site-ink);
+}
+
+.navbar .navbar-nav .nav-item.active > .nav-link {
+  color: var(--site-ink);
+  font-weight: 600;
+}
+
+// Reading progress bar (thin, indigo)
+progress {
+  height: 2px;
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar table of contents
+// ---------------------------------------------------------------------------
+
+#toc-sidebar {
+  &::before {
+    content: "Contents";
+    display: block;
+    margin: 0 0 0.85rem 0.05rem;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--site-muted);
+  }
+
+  .toc-list,
+  &.toc > .toc-list {
+    padding-left: 0;
+  }
+
+  .toc-list .toc-list {
+    padding-left: 0.95rem;
+  }
+
+  .toc-link {
+    padding: 0.22rem 0;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--site-muted);
+
+    &::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    &:hover {
+      color: var(--site-ink);
+    }
+  }
+
+  .toc-link.is-active-link {
+    color: var(--site-ink);
+    font-weight: 500;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// About page
+// ---------------------------------------------------------------------------
+
+.post .desc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--site-muted);
+}
+
+.profile .more-info {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--site-muted);
+}
+
+.social {
+  .contact-icons {
+    font-size: 1.5rem;
+  }
+
+  .contact-icons a i::before {
+    color: var(--site-muted);
+  }
+
+  .contact-icons a:hover i::before {
+    color: var(--site-ink);
+  }
+
+  .contact-note {
+    font-size: 0.78rem;
+    color: var(--site-muted);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Publications — denser, quieter list
+// ---------------------------------------------------------------------------
+
+.publications {
+  ol.bibliography {
+    font-size: 0.9rem;
+    line-height: 1.55;
+
+    li {
+      margin-bottom: 0.9rem;
+    }
+
+    li .title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--site-ink);
+      margin-bottom: 0.15rem;
+    }
+
+    li .abbr abbr {
+      background-color: transparent;
+      color: var(--site-muted) !important;
+      border: 1px solid var(--site-hairline);
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.18rem 0.4rem;
+      text-align: center;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    li .abbr .award {
+      color: var(--global-theme-color) !important;
+      border-color: var(--global-theme-color);
+    }
+
+    li .author a {
+      border-bottom: none;
+      color: inherit;
+
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: underline;
+      }
+    }
+
+    li .author > em {
+      border-bottom: none;
+      font-weight: 600;
+      color: var(--site-ink);
+    }
+
+    li .author > span.more-authors {
+      border-bottom: none;
+      color: var(--site-muted);
+    }
+
+    li .badges span {
+      color: var(--global-text-color);
+    }
+
+    li .links a.btn {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      padding: 0.15rem 0.55rem;
+      margin: 0 0.2rem 0 0;
+      border: 1px solid var(--site-hairline);
+      border-radius: 3px;
+      color: var(--site-muted);
+
+      &:hover {
+        border-color: var(--global-theme-color);
+        color: var(--global-theme-color);
+        background: transparent;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Flat surfaces: no big shadows, no hover lift, no oversized cards
+// ---------------------------------------------------------------------------
+
+.z-depth-0,
+.z-depth-1,
+.z-depth-2,
+.z-depth-3,
+.z-depth-4,
+.z-depth-5 {
+  box-shadow: none !important;
+}
+
+.card {
+  border: 1px solid var(--site-hairline);
+  border-radius: 4px;
+  box-shadow: none !important;
+}
+
+.hoverable {
+  transition: none;
+}
+
+.hoverable:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+// Blog listing header (tame the 5rem title)
+.header-bar h1 {
+  font-size: 2.4rem;
+  color: var(--site-ink);
+}
+
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+
+footer.sticky-bottom {
+  border-top: 1px solid var(--site-hairline);
+
+  .container {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--site-muted);
+  }
+
+  a {
+    color: var(--site-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--site-ink);
+  }
+}
