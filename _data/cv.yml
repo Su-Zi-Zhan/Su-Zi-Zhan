@@ -1,47 +1,43 @@
 cv:
   name: LI Ruijie
-  label: Undergraduate
   email: 24300720157@m.fudan.edu.cn
   location: Fudan University, Shanghai
-  image: ""
-  summary: A third-year undergrad at Fudan University majoring in Data Science
 
   social_networks:
     - network: GitHub
       username: Su-Zi-Zhan
 
-  address:
-    street: 2500 Songhuajiang Road
-    city: Shanghai
-    region: Hongkou District
-    postalCode: 200437
-    countryCode: CN
+  # Postal address (not a supported RenderCV header field):
+  # 2500 Songhuajiang Road, Hongkou District, Shanghai, 200437, CN
 
   sections:
+    Summary:
+      - A third-year undergrad at Fudan University majoring in Data Science
+
     Education:
       - institution: Fudan University
         location: Shanghai, China
         url: https://www.fudan.edu.cn/
         area: Data Science
-        studyType: Undergraduate
+        degree: Undergraduate
         start_date: 2025
         end_date: 2028
         score: ""
         courses: "Advanced Linear Algebra, Real Analysis, Numerical Linear Algebra, Optimization, Probability, Mathematical Statistics, Machine Learning, Reinforcement Learning"
         highlights:
-          - Courses graded A+: Numerical Linear Algebra, Optimization, Mathematical Statistics
+          - "Courses graded A+: Numerical Linear Algebra, Optimization, Mathematical Statistics"
 
       - institution: Fudan University
         location: Shanghai, China
         url: https://www.fudan.edu.cn/
         area: Electronic Engineering
-        studyType: Undergraduate
+        degree: Undergraduate
         start_date: 2024
         end_date: 2025
 
     Awards:
-      - title: Honorable Mention in Computational Mathematics, Shing-Tung Yau College Student Mathematics Competition; advanced to the Finals (top 15 among the world).
-        date: 2026-06-28
+      - name: Honorable Mention in Computational Mathematics, Shing-Tung Yau College Student Mathematics Competition; advanced to the Finals (top 15 among the world).
+        date: "2026-06-28"
         awarder: Yau Mathematical Sciences Center, Tsinghua University; Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)
         url: https://yau-contest.com/uploads/202606/12/1781240346252772.pdf
         summary: S.-T. Yau College Student Mathematics Contest is initiated by Professor Shing-Tung Yau in 2010. The contest is divided into six subjects — Geometry and topology, Algebra and Number Theory, Probability and Statistics, Applied and Computational Mathematics, Analysis and Partial Differential Equations, Math Physics. It focuses on examining college students' basic knowledge and basic skills of mathematics comprehensively, and selecting excellent mathematical talents according to the standards of postgraduate examination in first-class universities abroad. It aims to encourage students to make comprehensive progress in basic knowledge, comprehensive ability and academic accomplishment of mathematics, and to promote the development of mathematics education in Chinese universities. Since the contest has been established, more than 25,000 college students from more than 600 universities in mainland China, Hong Kong and Taiwan have taken part in the contest. More than 980 students were awarded prizes. S.-T. Yau College Student Mathematics Contest has played an important role in cultivating Chinese mathematical talents, and has become an important reference for the discovery and selection of young mathematical talents and the admission of graduate students of mathematics and related majors in the famous universities across the world.
@@ -49,11 +45,13 @@ cv:
     Publications:
       - title: The Exact Time-Uniform Rate Frontier for Stochastic Gradient Descent on Smooth Convex Objectives
         authors:
-          - Ruijie Li, Kang Chen, Tianyu Wang
-        publisher: arXiv preprint
-        releaseDate: 2026-09-08
+          - Ruijie Li
+          - Kang Chen
+          - Tianyu Wang
+        journal: arXiv preprint
+        date: "2026-09-08"
         url: https://arxiv.org/abs/2609.08537
-        
+
     Skills:
       - name: Physics
         level: Master
@@ -71,5 +69,3 @@ cv:
       - name: Music
         icon: fa-solid fa-tag
         keywords: "David Tao, LI Jian, JJ Lin"
-
-    
